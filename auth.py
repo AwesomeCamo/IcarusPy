@@ -19,8 +19,8 @@ def check_auth():
         session.cookies.update(pickle.load(f))
     check_output = session.get(url="https://members-ng.iracing.com/data/member/info")  # tries to do api call
     if "error" in check_output.text:  # checks if previous api call worked, if not, call iracing_auth func
-        iracing_auth()
         print("Re-authorization needed")
+        iracing_auth()
     else:
         print("check worked")
 

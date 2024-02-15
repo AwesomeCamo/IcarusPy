@@ -41,6 +41,16 @@ def insert_race_result(customer_id, input_dict):
     mycursor.execute(sql, val)
     mydb.commit()
 
+
+def insert_car_data(car_dict, discipline):
+    car_id = str(car_dict["car_id"])
+    car_name = str(car_dict["car_name"])
+    sql = "INSERT IGNORE INTO cars (car_id, car_name, discipline) VALUES (%s,%s,%s)"
+    val = (car_id, car_name, discipline,)
+    mycursor.execute(sql, val)
+    mydb.commit()
+
+
 def count_races(customer_id, year, quarter):
     # returns count of races in database with given parameters
     list_of_events = []

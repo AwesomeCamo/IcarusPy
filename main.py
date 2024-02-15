@@ -3,6 +3,7 @@ import pickle
 import requests
 
 from auth import check_auth
+from car_list import update_car_list
 from db_entries import get_list_of_ids, count_races, insert_race_result
 
 
@@ -20,7 +21,7 @@ def get_race_results(session, customer_id, year, quarter):
             # loop starts at first race result that is not in database
             current_result_dict = json.loads(result_list[i])
             insert_race_result(customer_id, current_result_dict)
-            print("Race added for driver %s", customer_id)
+            print("Race added for driver %s" % customer_id)
         # goes through all the steps of getting to a user's results and converts them
         # into a list for further usage. Results that are not in database yet are added
 
@@ -30,11 +31,10 @@ def main():
     session = requests.Session()
     with open('./cookie-jar.txt', 'rb') as f:
         session.cookies.update(pickle.load(f))
+    # update_car_list(session)
+    # above func is only needed when new cars are added to iRacing
     for i in range(len(get_list_of_ids())):
         print("Querying results for driver", get_list_of_ids()[i])
-        get_race_results(session, str(get_list_of_ids()[i]), str(2023), str(2))
-        get_race_results(session, str(get_list_of_ids()[i]), str(2023), str(3))
-        get_race_results(session, str(get_list_of_ids()[i]), str(2023), str(4))
         get_race_results(session, str(get_list_of_ids()[i]), str(2024), str(1))
 
 
