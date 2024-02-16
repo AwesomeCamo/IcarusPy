@@ -5,6 +5,7 @@ import requests
 from auth import check_auth
 from car_list import update_car_list
 from db_entries import get_list_of_ids, count_races, insert_race_result
+from series_list import get_series_list
 
 
 def get_race_results(session, customer_id, year, quarter):
@@ -32,7 +33,8 @@ def main():
     with open('./cookie-jar.txt', 'rb') as f:
         session.cookies.update(pickle.load(f))
     # update_car_list(session)
-    # above func is only needed when new cars are added to iRacing
+    #get_series_list(session)
+    # above funcs are only needed when new content is added to iRacing
     for i in range(len(get_list_of_ids())):
         print("Querying results for driver", get_list_of_ids()[i])
         get_race_results(session, str(get_list_of_ids()[i]), str(2024), str(1))
