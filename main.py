@@ -1,3 +1,4 @@
+import asyncio
 import json
 import pickle
 import requests
@@ -5,6 +6,8 @@ import requests
 from auth import check_auth
 from car_list import update_car_list
 from db_entries import get_list_of_ids, count_races, insert_race_result
+from discord_message_sender import send_discord_message
+from get_subsession_data import get_subsession_data
 from series_list import get_series_list
 
 
@@ -21,8 +24,17 @@ def get_race_results(session, customer_id, year, quarter):
         for i in range(count_races(customer_id, year, quarter), len(result_list)):
             # loop starts at first race result that is not in database
             current_result_dict = json.loads(result_list[i])
+            # dict in which data for one specific race is stored
+            sub_sess_data = get_subsession_data(customer_id, current_result_dict["subsession_id"], session)
+            old_iR = sub_sess_data['oldi_rating']
+            new_iR = sub_sess_data['newi_rating']
+            car_number = sub_sess_data['livery']['car_number']
+            try:
+                send_discord_message(customer_id, current_result_dict, old_iR, new_iR, car_number)
+            except Exception as e:
+                print(e)
+
             insert_race_result(customer_id, current_result_dict)
-            print("Race added for driver %s" % customer_id)
         # goes through all the steps of getting to a user's results and converts them
         # into a list for further usage. Results that are not in database yet are added
 
@@ -33,7 +45,7 @@ def main():
     with open('./cookie-jar.txt', 'rb') as f:
         session.cookies.update(pickle.load(f))
     # update_car_list(session)
-    #get_series_list(session)
+    # get_series_list(session)
     # above funcs are only needed when new content is added to iRacing
     for i in range(len(get_list_of_ids())):
         print("Querying results for driver", get_list_of_ids()[i])

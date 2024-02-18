@@ -65,3 +65,9 @@ def count_races(customer_id, year, quarter):
     for x in mycursor:
         list_of_events.append(x[0])
     return len(list_of_events)
+
+def get_name_from_id(customer_id):
+    # returns driver name for the given id
+    mycursor.execute(f"SELECT first_name FROM driver WHERE driver_id ={customer_id}")
+    for x in mycursor:
+        return(x[0])
