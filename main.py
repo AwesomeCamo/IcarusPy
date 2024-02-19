@@ -1,6 +1,7 @@
-import asyncio
 import json
 import pickle
+import time
+
 import requests
 
 from auth import check_auth
@@ -52,5 +53,8 @@ def main():
         get_race_results(session, str(get_list_of_ids()[i]), str(2024), str(1))
 
 
-main()
+while True:
+    main()
+    print("Check complete - sleeping for 5 minutes")
+    time.sleep(300)
 

@@ -12,20 +12,20 @@ API_ENDPOINT = f"https://discord.com/api/v9/channels/{CHANNEL_ID}/messages"
 
 def send_discord_message(customer_id, result_dict, old_iR, new_iR, car_number):
     name = get_name_from_id(customer_id)
-    pos = result_dict["finish_position"]
+    pos = result_dict["finish_position_in_class"]
     track = result_dict["track"]["track_name"]
     series = result_dict["series_name"]
-    starting_pos = result_dict["starting_position"]
+    starting_pos = result_dict["starting_position_in_class"]
     graph = ":chart_with_upwards_trend:"
     sign = "+"
     if old_iR > new_iR:
-        graph = ":chart_with_downwards_trend"
+        graph = ":chart_with_downwards_trend:"
         sign = ""
     message = (f":checkered_flag: New race result in :trophy: {series}:\n"
                f":bust_in_silhouette: **#{car_number} {name}** finished P{pos} at :motorway: **{track}**\n"
                f"          :stopwatch: Starting position: {starting_pos}\n"
                f"          :checkered_flag: Finishing position: {pos}\n"
-               f"          {graph} iRating change: {sign}{new_iR-old_iR}")
+               f"          {graph} New iRating: {new_iR} ({sign}{new_iR-old_iR})")
 
     headers = {
         "Authorization": f"Bot {TOKEN}",
