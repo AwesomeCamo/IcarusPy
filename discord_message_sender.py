@@ -3,6 +3,7 @@ import os
 from dotenv import load_dotenv
 
 from db_entries import get_name_from_id
+from get_subsession_data import get_subsession_data
 
 load_dotenv()
 TOKEN = os.getenv("DISCORD_TOKEN")
@@ -10,7 +11,11 @@ CHANNEL_ID = "1209135503887306862"  # ID of channel chosen for bot messages
 API_ENDPOINT = f"https://discord.com/api/v9/channels/{CHANNEL_ID}/messages"
 
 
-def send_discord_message(customer_id, result_dict, old_iR, new_iR, car_number):
+def send_discord_message(customer_id, result_dict, session):
+    sub_sess_data = get_subsession_data(customer_id, result_dict["subsession_id"], session)
+    old_iR = sub_sess_data['oldi_rating']
+    new_iR = sub_sess_data['newi_rating']
+    car_number = sub_sess_data['livery']['car_number']
     name = get_name_from_id(customer_id)
     pos = result_dict["finish_position_in_class"]+1
     track = result_dict["track"]["track_name"]

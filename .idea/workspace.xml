@@ -4,9 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a5d5332-669b-4b2d-99e9-664e8a3d9068" name="Changes" comment="added support for team racing">
+    <list default="true" id="6a5d5332-669b-4b2d-99e9-664e8a3d9068" name="Changes" comment="fixed position bug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/bin/activate" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/bin/activate.csh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/bin/activate.fish" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/bin/activate.nu" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/bin/activate.ps1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/bin/activate_this.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/bin/normalizer" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/bin/pip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/bin/pip-3.11" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/bin/pip3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/bin/pip3.11" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/bin/python" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/bin/python3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/bin/python3.11" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/bin/wheel" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/bin/wheel-3.11" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/bin/wheel3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/bin/wheel3.11" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/pyvenv.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cookie-jar.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cookie-jar.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/discord_message_sender.py" beforeDir="false" afterPath="$PROJECT_DIR$/discord_message_sender.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,7 +195,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708348851662</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="fixed position bug">
+      <option name="closed" value="true" />
+      <created>1708390433055</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1708390433055</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -184,6 +214,7 @@
     <MESSAGE value="add functionality to keep series list up to date" />
     <MESSAGE value="add functionality to send messages in discord channel" />
     <MESSAGE value="added support for team racing" />
-    <option name="LAST_COMMIT_MESSAGE" value="added support for team racing" />
+    <MESSAGE value="fixed position bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed position bug" />
   </component>
 </project>
