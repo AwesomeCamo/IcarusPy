@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a5d5332-669b-4b2d-99e9-664e8a3d9068" name="Changes" comment="add functionality to send messages in discord channel">
+    <list default="true" id="6a5d5332-669b-4b2d-99e9-664e8a3d9068" name="Changes" comment="added support for team racing">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cookie-jar.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cookie-jar.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/discord_message_sender.py" beforeDir="false" afterPath="$PROJECT_DIR$/discord_message_sender.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_subsession_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/get_subsession_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,7 +165,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708281905114</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="added support for team racing">
+      <option name="closed" value="true" />
+      <created>1708348851662</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1708348851662</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -178,6 +183,7 @@
     <MESSAGE value="add car picture retrieval" />
     <MESSAGE value="add functionality to keep series list up to date" />
     <MESSAGE value="add functionality to send messages in discord channel" />
-    <option name="LAST_COMMIT_MESSAGE" value="add functionality to send messages in discord channel" />
+    <MESSAGE value="added support for team racing" />
+    <option name="LAST_COMMIT_MESSAGE" value="added support for team racing" />
   </component>
 </project>

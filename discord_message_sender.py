@@ -6,16 +6,16 @@ from db_entries import get_name_from_id
 
 load_dotenv()
 TOKEN = os.getenv("DISCORD_TOKEN")
-CHANNEL_ID = "1208191406544392312"  # ID of channel chosen for bot messages
+CHANNEL_ID = "1209135503887306862"  # ID of channel chosen for bot messages
 API_ENDPOINT = f"https://discord.com/api/v9/channels/{CHANNEL_ID}/messages"
 
 
 def send_discord_message(customer_id, result_dict, old_iR, new_iR, car_number):
     name = get_name_from_id(customer_id)
-    pos = result_dict["finish_position_in_class"]
+    pos = result_dict["finish_position_in_class"]+1
     track = result_dict["track"]["track_name"]
     series = result_dict["series_name"]
-    starting_pos = result_dict["starting_position_in_class"]
+    starting_pos = result_dict["starting_position_in_class"]+1
     graph = ":chart_with_upwards_trend:"
     sign = "+"
     if old_iR > new_iR:
