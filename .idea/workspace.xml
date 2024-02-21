@@ -4,16 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a5d5332-669b-4b2d-99e9-664e8a3d9068" name="Changes" comment="refactor discord message sending">
-      <change afterPath="$PROJECT_DIR$/db_creator.py" afterDir="false" />
+    <list default="true" id="6a5d5332-669b-4b2d-99e9-664e8a3d9068" name="Changes" comment="rename file">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/car_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/car_list.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cookie-jar.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cookie-jar.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_entries.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_entries.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/discord_message_sender.py" beforeDir="false" afterPath="$PROJECT_DIR$/discord_message_sender.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_subsession_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/get_subsession_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/series_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/series_list.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +50,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.icarus_bot">
     <configuration name="db_creator" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="IcarusCareer" />
       <option name="ENV_FILES" value="" />
@@ -103,7 +95,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+    <configuration name="icarus_bot" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="IcarusCareer" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -116,7 +108,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/icarus_bot.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -220,7 +212,23 @@
       <option name="project" value="LOCAL" />
       <updated>1708395963336</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="add database creator, refactor database connection">
+      <option name="closed" value="true" />
+      <created>1708530973109</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1708530973109</updated>
+    </task>
+    <task id="LOCAL-00011" summary="rename file">
+      <option name="closed" value="true" />
+      <created>1708531633147</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1708531633147</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -233,6 +241,8 @@
     <MESSAGE value="added support for team racing" />
     <MESSAGE value="fixed position bug" />
     <MESSAGE value="refactor discord message sending" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor discord message sending" />
+    <MESSAGE value="add database creator, refactor database connection" />
+    <MESSAGE value="rename file" />
+    <option name="LAST_COMMIT_MESSAGE" value="rename file" />
   </component>
 </project>
