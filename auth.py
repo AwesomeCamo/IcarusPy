@@ -1,10 +1,18 @@
 import requests
 import pickle
+import os
+from dotenv import load_dotenv
+
+from hashgen import encode_pw
+
+load_dotenv()
+iRacingUser = os.getenv("IRACING_USER")
+iRacingPW = os.getenv("IRACING_PASSWORD")
 
 
 def iracing_auth():
     # authorizes with iRacing and stores cookie in cookie-jar.txt
-    inputs = {"email": "camo2708@gmail.com", "password": "0YmkXYQRxB0R3GAOoMejV2atCSGvFXnOZLzgGzd0Frc="}
+    inputs = {"email": iRacingUser, "password": encode_pw(iRacingUser, iRacingPW)}
     session = requests.Session()
     session.post(url="https://members-ng.iracing.com/auth", data=inputs)
     with open('./cookie-jar.txt', 'wb') as f:

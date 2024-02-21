@@ -55,6 +55,10 @@ To run this project, you will need to add the following environment variables to
 
 `DATABASE_PASSWORD`
 
+`IRACING_USER`
+
+`IRACING_PASSWORD`
+
 
 
 

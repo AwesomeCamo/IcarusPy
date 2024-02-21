@@ -26,10 +26,10 @@ def get_race_results(session, customer_id, year, quarter):
             # loop starts at first race result that is not in database
             current_result_dict = json.loads(result_list[i])
             # dict in which data for one specific race is stored
-            try:
-                send_discord_message(customer_id, current_result_dict, session)
-            except Exception as e:
-                print(e)
+            #try:
+                #send_discord_message(customer_id, current_result_dict, session)
+            #except Exception as e:
+                #print(e)
 
             insert_race_result(customer_id, current_result_dict)
         # goes through all the steps of getting to a user's results and converts them
