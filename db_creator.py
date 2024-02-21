@@ -39,4 +39,5 @@ def add_drivers_to_db():
 create_database()
 add_drivers_to_db()
 mydb.commit()
+print("database created")
 
