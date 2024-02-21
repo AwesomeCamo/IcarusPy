@@ -1,6 +1,11 @@
 import mysql.connector
+import os
+from dotenv import load_dotenv
 
-mydb = mysql.connector.connect(host="localhost", user="root", passwd="rootpw", database="testdb")
+load_dotenv()
+db_password = os.getenv("DATABASE_PASSWORD")
+
+mydb = mysql.connector.connect(host="localhost", user="root", passwd=db_password, database="icarus")
 mycursor = mydb.cursor()
 
 

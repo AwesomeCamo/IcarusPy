@@ -3,6 +3,8 @@ import webbrowser
 
 from db_entries import insert_car_data
 
+# only used to update list of iRacing road cars and get their preview pictures for career mode
+
 
 def update_car_list(session):
     # goes through iRacing API and gets list of cars, then calls insert_car_data to add new cars to database

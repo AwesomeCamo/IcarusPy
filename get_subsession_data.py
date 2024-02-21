@@ -1,5 +1,8 @@
 import json
 
+# returns subsession data for accessing broader information i.e. iRating or car number
+# differentiates between team race and solo race because api returns different structure
+
 
 def get_subsession_data(customer_id, subsession_id, session):
     search_url = f"https://members-ng.iracing.com/data/results/get?subsession_id={subsession_id}"

@@ -7,7 +7,7 @@ from get_subsession_data import get_subsession_data
 
 load_dotenv()
 TOKEN = os.getenv("DISCORD_TOKEN")
-CHANNEL_ID = "1209135503887306862"  # ID of channel chosen for bot messages
+CHANNEL_ID = os.getenv("DISCORD_CHANNEL_ID")  # ID of channel chosen for bot messages
 API_ENDPOINT = f"https://discord.com/api/v9/channels/{CHANNEL_ID}/messages"
 
 
@@ -26,6 +26,8 @@ def send_discord_message(customer_id, result_dict, session):
     if old_iR > new_iR:
         graph = ":chart_with_downwards_trend:"
         sign = ""
+    # used to change emoji depending on iRating gain or loss
+
     message = (f":checkered_flag: New race result in :trophy: {series}:\n"
                f":bust_in_silhouette: **#{car_number} {name}** finished P{pos} at :motorway: **{track}**\n"
                f"          :stopwatch: Starting position: {starting_pos}\n"

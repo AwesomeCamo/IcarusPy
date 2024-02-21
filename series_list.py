@@ -2,6 +2,8 @@ import json
 
 from db_entries import insert_series_data
 
+# only used to keep track of current race series for career mode
+
 
 def get_series_list(session):
     search_url = "https://members-ng.iracing.com/data/series/get"

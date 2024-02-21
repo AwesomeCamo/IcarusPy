@@ -34,6 +34,7 @@ def get_race_results(session, customer_id, year, quarter):
             insert_race_result(customer_id, current_result_dict)
         # goes through all the steps of getting to a user's results and converts them
         # into a list for further usage. Results that are not in database yet are added
+        # and discord message function is called to send notification
 
 
 def main():
@@ -51,6 +52,6 @@ def main():
 
 while True:
     main()
-    print("Check complete - sleeping for 5 minutes")
-    time.sleep(300)
+    print("Check complete - sleeping for 10 minutes")
+    time.sleep(600)
 

@@ -4,31 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a5d5332-669b-4b2d-99e9-664e8a3d9068" name="Changes" comment="fixed position bug">
+    <list default="true" id="6a5d5332-669b-4b2d-99e9-664e8a3d9068" name="Changes" comment="refactor discord message sending">
+      <change afterPath="$PROJECT_DIR$/db_creator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/bin/activate" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/bin/activate.csh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/bin/activate.fish" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/bin/activate.nu" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/bin/activate.ps1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/bin/activate_this.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/bin/normalizer" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/bin/pip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/bin/pip-3.11" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/bin/pip3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/bin/pip3.11" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/bin/python" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/bin/python3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/bin/python3.11" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/bin/wheel" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/bin/wheel-3.11" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/bin/wheel3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/bin/wheel3.11" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/pyvenv.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/car_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/car_list.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cookie-jar.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cookie-jar.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_entries.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_entries.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/discord_message_sender.py" beforeDir="false" afterPath="$PROJECT_DIR$/discord_message_sender.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_subsession_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/get_subsession_data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/series_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/series_list.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,25 +39,48 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.auth.executor&quot;: &quot;Run&quot;,
-    &quot;Python.bot_setup.executor&quot;: &quot;Run&quot;,
-    &quot;Python.car_list.executor&quot;: &quot;Run&quot;,
-    &quot;Python.db_entries.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.auth.executor": "Run",
+    "Python.bot_setup.executor": "Run",
+    "Python.car_list.executor": "Run",
+    "Python.db_creator.executor": "Run",
+    "Python.db_entries.executor": "Run",
+    "Python.main.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager" selected="Python.main">
+    <configuration name="db_creator" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="IcarusCareer" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/db_creator.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="discord_message_sender" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="IcarusCareer" />
       <option name="ENV_FILES" value="" />
@@ -119,6 +127,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.db_creator" />
         <item itemvalue="Python.discord_message_sender" />
       </list>
     </recent_temporary>
@@ -203,7 +212,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708390433055</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="refactor discord message sending">
+      <option name="closed" value="true" />
+      <created>1708395963336</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1708395963336</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -215,6 +232,7 @@
     <MESSAGE value="add functionality to send messages in discord channel" />
     <MESSAGE value="added support for team racing" />
     <MESSAGE value="fixed position bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed position bug" />
+    <MESSAGE value="refactor discord message sending" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor discord message sending" />
   </component>
 </project>
