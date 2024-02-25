@@ -4,7 +4,7 @@ import time
 
 import requests
 
-from auth import check_auth
+from auth import check_auth, iracing_auth
 from car_list import update_car_list
 from db_entries import get_list_of_ids, count_races, insert_race_result
 from discord_message_sender import send_discord_message
@@ -38,7 +38,11 @@ def get_race_results(session, customer_id, year, quarter):
 
 
 def main():
-    check_auth()
+    iracing_auth()
+    # workaround for auth running out mid-check, this way new cookie gets generated with each run by calling
+    # iracing_auth() instead of check_auth()
+
+    # check_auth()
     session = requests.Session()
     with open('./cookie-jar.txt', 'rb') as f:
         session.cookies.update(pickle.load(f))
@@ -51,7 +55,12 @@ def main():
 
 
 while True:
-    main()
+    try:
+        main()
+    except Exception as error_message:
+        print(f"Error: {error_message}\n\ntrying again in 5 minutes")
+        time.sleep(300)
+        continue
     print("Check complete - sleeping for 10 minutes")
     time.sleep(600)
 
