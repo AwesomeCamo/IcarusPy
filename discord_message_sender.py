@@ -12,27 +12,51 @@ API_ENDPOINT = f"https://discord.com/api/v9/channels/{CHANNEL_ID}/messages"
 
 
 def send_discord_message(customer_id, result_dict, session):
+    def get_license_class(license_value):  # translates license from API in readable SR
+        license_class = "?"
+        if license_value <= 4:
+            license_class = "R"
+        elif license_value <= 8:
+            license_class = "D"
+        elif license_value <= 12:
+            license_class = "C"
+        elif license_value <= 16:
+            license_class = "B"
+        elif license_value <= 20:
+            license_class = "A"
+        elif license_value > 20:
+            license_class = "PRO"
+        return license_class
+
     sub_sess_data = get_subsession_data(customer_id, result_dict["subsession_id"], session)
-    old_iR = sub_sess_data['oldi_rating']
-    new_iR = sub_sess_data['newi_rating']
+    old_ir = sub_sess_data['oldi_rating']
+    new_ir = sub_sess_data['newi_rating']
     car_number = sub_sess_data['livery']['car_number']
     name = get_name_from_id(customer_id)
-    pos = result_dict["finish_position_in_class"]+1
+    pos = result_dict["finish_position_in_class"] + 1
     track = result_dict["track"]["track_name"]
     series = result_dict["series_name"]
-    starting_pos = result_dict["starting_position_in_class"]+1
+    starting_pos = result_dict["starting_position_in_class"] + 1
+    incidents = result_dict["incidents"]
+
     graph = ":chart_with_upwards_trend:"
     sign = "+"
-    if old_iR > new_iR:
+    if old_ir > new_ir:
         graph = ":chart_with_downwards_trend:"
         sign = ""
     # used to change emoji depending on iRating gain or loss
+
+    old_sr_class = get_license_class(int(sub_sess_data["old_license_level"]))
+    new_sr_class = get_license_class(int(sub_sess_data["new_license_level"]))
+    old_sr = float(sub_sess_data["old_sub_level"])/100
+    new_sr = float(sub_sess_data["new_sub_level"]) / 100
 
     message = (f":checkered_flag: New race result in :trophy: {series}:\n"
                f":bust_in_silhouette: **#{car_number} {name}** finished P{pos} at :motorway: **{track}**\n"
                f"          :stopwatch: Starting position: {starting_pos}\n"
                f"          :checkered_flag: Finishing position: {pos}\n"
-               f"          {graph} New iRating: {new_iR} ({sign}{new_iR-old_iR})")
+               f"          {graph} New iRating: {new_ir} ({sign}{new_ir - old_ir})\n"
+               f"          :warning: Incidents: {incidents} ({old_sr_class}{old_sr} -> {new_sr_class}{new_sr})")
 
     headers = {
         "Authorization": f"Bot {TOKEN}",
