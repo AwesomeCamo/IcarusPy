@@ -51,8 +51,8 @@ def send_discord_message(customer_id, result_dict, session):
     old_sr = float(sub_sess_data["old_sub_level"])/100
     new_sr = float(sub_sess_data["new_sub_level"]) / 100
 
-    message = (f":checkered_flag: New race result in :trophy: {series}:\n"
-               f":bust_in_silhouette: **#{car_number} {name}** finished P{pos} at :motorway: **{track}**\n"
+    message = (f":checkered_flag: New race result in :trophy: **{series}**:\n"
+               f":bust_in_silhouette: **#{car_number} {name}** finished **P{pos}** at :motorway: **{track}**\n"
                f"          :stopwatch: Starting position: {starting_pos}\n"
                f"          :checkered_flag: Finishing position: {pos}\n"
                f"          {graph} New iRating: {new_ir} ({sign}{new_ir - old_ir})\n"

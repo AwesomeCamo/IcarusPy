@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a5d5332-669b-4b2d-99e9-664e8a3d9068" name="Changes" comment="fix auth bug that could lead to crashing">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cookie-jar.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cookie-jar.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/discord_message_sender.py" beforeDir="false" afterPath="$PROJECT_DIR$/discord_message_sender.py" afterDir="false" />
-    </list>
+    <list default="true" id="6a5d5332-669b-4b2d-99e9-664e8a3d9068" name="Changes" comment="add support for safety rating in message" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -302,7 +298,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708872205477</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="add support for safety rating in message">
+      <option name="closed" value="true" />
+      <created>1709076219736</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1709076219736</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -322,6 +326,7 @@
     <MESSAGE value="add message for when database creation is completed" />
     <MESSAGE value="refactor auth process" />
     <MESSAGE value="fix auth bug that could lead to crashing" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix auth bug that could lead to crashing" />
+    <MESSAGE value="add support for safety rating in message" />
+    <option name="LAST_COMMIT_MESSAGE" value="add support for safety rating in message" />
   </component>
 </project>
