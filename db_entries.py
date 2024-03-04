@@ -2,6 +2,18 @@ import mysql.connector
 import os
 from dotenv import load_dotenv
 
+import firebase_admin
+from firebase_admin import credentials
+from firebase_admin import firestore
+
+from get_license_class import get_license_class
+from get_subsession_data import get_subsession_data
+
+cred = credentials.Certificate("./firestore_cred.json")
+firebase_admin.initialize_app(cred)
+
+firedb = firestore.client()
+
 load_dotenv()
 db_password = os.getenv("DATABASE_PASSWORD")
 
@@ -25,8 +37,9 @@ def build_exec_string(customer_id, year, quarter):
     return exec_string
 
 
-def insert_race_result(customer_id, input_dict):
+def insert_race_result(customer_id, input_dict, session):
     # inserts result in database
+    subsession_id = str(input_dict['subsession_id'])
     session_id = str(input_dict['session_id'])
     driver_id = str(customer_id)
     start_time = str(input_dict['start_time']).replace("T", " ").replace("Z", "")
@@ -41,10 +54,50 @@ def insert_race_result(customer_id, input_dict):
     event_year = str(input_dict['season_year'])
     event_quarter = str(input_dict['season_quarter'])
 
-    sql = "INSERT INTO results VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
-    val = (session_id, driver_id, start_time, car_name, series_name, track_name, starting_position, finishing_position, incidents, sof, championship_points, event_year, event_quarter)
+    firebase_dict = {
+        "subsession_id": subsession_id,
+        "session_id": session_id,
+        "driver_id": driver_id,
+        "start_time": start_time,
+        "car": car_name,
+        "series": series_name,
+        "track": track_name,
+        "starting_position": starting_position,
+        "finishing_position": finishing_position,
+        "incidents": incidents,
+        "sof": sof,
+        "championship_points": championship_points,
+        "event_year": event_year,
+        "event_quarter": event_quarter,
+    }
+
+    sql = "INSERT INTO results VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
+    val = (subsession_id, session_id, driver_id, start_time, car_name, series_name, track_name, starting_position, finishing_position, incidents, sof, championship_points, event_year, event_quarter)
     mycursor.execute(sql, val)
     mydb.commit()
+
+    sub_sess_data = get_subsession_data(customer_id, subsession_id, session)
+    new_ir = sub_sess_data['newi_rating']
+    new_sr_class = get_license_class(int(sub_sess_data["new_license_level"]))
+    new_sr = float(sub_sess_data["new_sub_level"]) / 100
+
+    firedb.collection('drivers').document(driver_id).collection('results').add({"subsession_id": subsession_id,
+                                                                                "session_id": session_id,
+                                                                                "driver_id": driver_id,
+                                                                                "start_time": start_time,
+                                                                                "car": car_name,
+                                                                                "series": series_name,
+                                                                                "track": track_name,
+                                                                                "starting_position": starting_position,
+                                                                                "finishing_position": finishing_position,
+                                                                                "incidents": incidents,
+                                                                                "sof": sof,
+                                                                                "championship_points": championship_points,
+                                                                                "event_year": event_year,
+                                                                                "event_quarter": event_quarter,
+                                                                                "sr_class": new_sr_class,
+                                                                                "sr": new_sr,
+                                                                                "ir": new_ir})
 
 
 def insert_car_data(car_dict, discipline):
@@ -70,6 +123,7 @@ def count_races(customer_id, year, quarter):
     for x in mycursor:
         list_of_events.append(x[0])
     return len(list_of_events)
+
 
 def get_name_from_id(customer_id):
     # returns driver name for the given id

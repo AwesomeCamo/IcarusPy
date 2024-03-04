@@ -27,7 +27,7 @@ def create_database():
     mycursor.execute("CREATE DATABASE icarus")
     mydb.database = "icarus"
     mycursor.execute("CREATE TABLE driver (driver_id BIGINT PRIMARY KEY, first_name VARCHAR(50), last_name VARCHAR(50), discord_id BIGINT)")
-    mycursor.execute(("CREATE TABLE results (session_id BIGINT, driver_id BIGINT, start_time datetime, car_name VARCHAR(50), series_name VARCHAR(100), track_name VARCHAR(100), starting_position BIGINT, finishing_position BIGINT, incidents INT, sof INT, championship_points INT, event_year INT, event_quarter INT)"))
+    mycursor.execute(("CREATE TABLE results (subsession_id BIGINT, session_id BIGINT, driver_id BIGINT, start_time datetime, car_name VARCHAR(50), series_name VARCHAR(100), track_name VARCHAR(100), starting_position BIGINT, finishing_position BIGINT, incidents INT, sof INT, championship_points INT, event_year INT, event_quarter INT)"))
     mycursor.execute("ALTER TABLE results ADD PRIMARY KEY(session_id, driver_id)")
 
 

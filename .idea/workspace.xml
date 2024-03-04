@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a5d5332-669b-4b2d-99e9-664e8a3d9068" name="Changes" comment="add support for safety rating in message" />
+    <list default="true" id="6a5d5332-669b-4b2d-99e9-664e8a3d9068" name="Changes" comment="add support for safety rating in message">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/get_license_class.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cookie-jar.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cookie-jar.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_creator.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_creator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_entries.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_entries.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/discord_message_sender.py" beforeDir="false" afterPath="$PROJECT_DIR$/discord_message_sender.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_subsession_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/get_subsession_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/icarus_bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/icarus_bot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,6 +29,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -32,29 +48,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.auth.executor&quot;: &quot;Run&quot;,
-    &quot;Python.bot_setup.executor&quot;: &quot;Run&quot;,
-    &quot;Python.car_list.executor&quot;: &quot;Run&quot;,
-    &quot;Python.db_creator.executor&quot;: &quot;Run&quot;,
-    &quot;Python.db_entries.executor&quot;: &quot;Run&quot;,
-    &quot;Python.hashgen.executor&quot;: &quot;Run&quot;,
-    &quot;Python.icarus_bot.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/marco/development/icarus/IcarusCareer&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.auth.executor": "Run",
+    "Python.bot_setup.executor": "Run",
+    "Python.car_list.executor": "Run",
+    "Python.db_creator.executor": "Run",
+    "Python.db_entries.executor": "Run",
+    "Python.hashgen.executor": "Run",
+    "Python.icarus_bot.executor": "Run",
+    "Python.main.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/home/marco/development/IcarusPy",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/venv" />
     </key>
   </component>
   <component name="RunManager" selected="Python.icarus_bot">
@@ -148,8 +165,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.hashgen" />
         <item itemvalue="Python.db_creator" />
+        <item itemvalue="Python.hashgen" />
         <item itemvalue="Python.discord_message_sender" />
       </list>
     </recent_temporary>

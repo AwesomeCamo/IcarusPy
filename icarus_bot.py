@@ -26,12 +26,12 @@ def get_race_results(session, customer_id, year, quarter):
             # loop starts at first race result that is not in database
             current_result_dict = json.loads(result_list[i])
             # dict in which data for one specific race is stored
-            try:
-                send_discord_message(customer_id, current_result_dict, session)
-            except Exception as e:
-                print(e)
+            # try:
+                # send_discord_message(customer_id, current_result_dict, session)
+            # except Exception as e:
+                # print(e)
 
-            insert_race_result(customer_id, current_result_dict)
+            insert_race_result(customer_id, current_result_dict, session)
         # goes through all the steps of getting to a user's results and converts them
         # into a list for further usage. Results that are not in database yet are added
         # and discord message function is called to send notification
@@ -52,6 +52,7 @@ def main():
     for i in range(len(get_list_of_ids())):
         print("Querying results for driver", get_list_of_ids()[i])
         get_race_results(session, str(get_list_of_ids()[i]), str(2024), str(1))
+        get_race_results(session, str(get_list_of_ids()[i]), str(2024), str(2))
 
 
 while True:

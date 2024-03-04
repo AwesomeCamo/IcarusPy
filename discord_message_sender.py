@@ -3,6 +3,7 @@ import os
 from dotenv import load_dotenv
 
 from db_entries import get_name_from_id
+from get_license_class import get_license_class
 from get_subsession_data import get_subsession_data
 
 load_dotenv()
@@ -12,21 +13,6 @@ API_ENDPOINT = f"https://discord.com/api/v9/channels/{CHANNEL_ID}/messages"
 
 
 def send_discord_message(customer_id, result_dict, session):
-    def get_license_class(license_value):  # translates license from API in readable SR
-        license_class = "?"
-        if license_value <= 4:
-            license_class = "R"
-        elif license_value <= 8:
-            license_class = "D"
-        elif license_value <= 12:
-            license_class = "C"
-        elif license_value <= 16:
-            license_class = "B"
-        elif license_value <= 20:
-            license_class = "A"
-        elif license_value > 20:
-            license_class = "PRO"
-        return license_class
 
     sub_sess_data = get_subsession_data(customer_id, result_dict["subsession_id"], session)
     old_ir = sub_sess_data['oldi_rating']
